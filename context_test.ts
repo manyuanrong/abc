@@ -1,5 +1,6 @@
-import { test, assertEquals } from "./dev_package.ts";
 import { context } from "./context.ts";
+import { assertEquals } from "https://deno.land/x/testing/asserts.ts";
+import { test } from "https://deno.land/x/testing/mod.ts";
 
 function injectContext(r = {}) {
   return context(r as any);

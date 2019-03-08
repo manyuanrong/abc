@@ -1,4 +1,5 @@
-import { test, assertEquals } from "./dev_package.ts";
+import { assertEquals } from "https://deno.land/x/testing/asserts.ts";
+import { test } from "https://deno.land/x/testing/mod.ts";
 import { abc } from "./abc.ts";
 const { exit } = Deno;
 
@@ -37,10 +38,7 @@ test({
 
     let res = await fetch("http://localhost:4500/string");
     assertEquals(res.status, 200);
-    assertEquals(
-      new TextDecoder().decode(await res.arrayBuffer()),
-      data.string
-    );
+    assertEquals(new TextDecoder().decode(await res.arrayBuffer()), data.string);
 
     res = await fetch("http://localhost:4500/html");
     assertEquals(res.status, 200);
